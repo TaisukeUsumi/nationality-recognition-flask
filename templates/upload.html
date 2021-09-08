@@ -1,0 +1,16 @@
+<!doctypehtml>
+<html>
+  <head>
+  	<meta charset="utf8"/>
+	<link href= "{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+  	<h1 id="input_message">Input the image you want to recognize the nationality</h1>
+  	<form method="POST" action="/upload" enctype="multipart/form-data" id="form">
+  		<input name="image_file" type="file" accept="image/*" onchange="previewImage(this);"/>
+		<input value="Input" type="submit"/>
+  	</form>
+	<img id="input_image" src="">
+	<script type=text/javascript src="{{ url_for('static', filename='loading.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+  <head>
+  	<meta charset="utf8"/>
+	<link href= "{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Prediction Result</h1>
+    <p>Result: {{result}}</p>
+    <p>Probability for each nationality: Chinese {{chinese_probability}}, Japanese {{japanese_probability}}, Korean {{korean_probability}}</p>
+  </body>
+</html>
