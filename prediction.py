@@ -11,9 +11,9 @@ class Prediction:
         image_size = 128
 
         face_cascade = cv2.CascadeClassifier('./model/haarcascade_frontalface_model.xml')
-        face = face_cascade.detectMultiScale(image)
-        for x, y, w, h in face:
-            image = image[y:y + h, x:x + w]
+        face = face_cascade.detectMultiScale(image)[0]
+        x, y, w, h = face
+        image = image[y:y + h, x:x + w]
         facial_image = cv2.resize(image,
                                 (image_size, image_size))
         facial_image = np.reshape(
